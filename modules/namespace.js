@@ -22,6 +22,7 @@ module.exports = function (config, libraries, services) {
                 var middlewares = namespaceMiddlewares.concat(handlerMiddlewares);
                 io.on('connection', function (socket) {
                     socket.on(namespace + ':' + name, function (req, res) {
+                        res = res || function () {};
                         var series = [];
                         for (var key in middlewares) {
                             series.push(function (middleware) { return function (next) {

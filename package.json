@@ -1,7 +1,7 @@
 {
     "name": "dragonnodejs-socket.io",
     "description": "Bundle with services to develop applications with socket.io",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "Christoph Herrmann <developer@dragonprojects.de>",
     "readmeFilename": "README.md",
     "main": "bundle.js",
