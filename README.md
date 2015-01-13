@@ -9,7 +9,7 @@ Bundle with services to develop applications with socket.io
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-socket.io": "1.*"
+        "dragonnodejs-socket.io": "2.*"
     }
 }
 ```
@@ -21,7 +21,7 @@ module.exports = {
         npm: {
             'dragonnodejs-socket.io': {
                 io: { port: process.env.PORT },
-                namespace: {},
+                namespace: { delimiter: ':' },
                 validate: function (validator) {
                     return {
                         emailaddress: function (input) {

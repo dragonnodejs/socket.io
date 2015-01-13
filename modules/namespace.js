@@ -3,7 +3,7 @@
 /**
  * Initialize namespace service to support socket.io with middlewares
  * @example
-    namespace: {}
+    namespace: { delimiter: ':' }
  */
 
 module.exports = function (config, libraries, services) {
@@ -21,7 +21,10 @@ module.exports = function (config, libraries, services) {
             on: function (name, handlerMiddlewares, handler) {
                 var middlewares = namespaceMiddlewares.concat(handlerMiddlewares);
                 io.on('connection', function (socket) {
-                    socket.on(namespace + ':' + name, function (req, res) {
+                    if (namespace) {
+                        name = namespace + config.delimiter + name;
+                    }
+                    socket.on(name, function (req, res) {
                         res = res || function () {};
                         var series = [];
                         for (var key in middlewares) {
