@@ -6,10 +6,10 @@
     "readmeFilename": "README.md",
     "main": "bundle.js",
     "dependencies": {
-        "dragonnodejs": "3.*",
-        "async": "*",
-        "socket.io": "*",
-        "validator": "*"
+        "dragonnodejs": "~3.0.3",
+        "async": "~0.9.0",
+        "socket.io": "~1.2.1",
+        "validator": "~3.27.0"
     },
     "repository": {
         "type": "git",
