@@ -9,7 +9,7 @@ Bundle with services to develop applications with socket.io
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-socket.io": "2.*"
+        "dragonnodejs-socket.io": "~2.0.0"
     }
 }
 ```
