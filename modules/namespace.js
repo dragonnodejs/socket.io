@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Initialize namespace service to support socket.io with middlewares
+ * Initialize namespace service to support Socket.IO with namespacing and middlewares
  * @example
     namespace: { delimiter: ':' }
  */
@@ -11,7 +11,7 @@ module.exports = function (config, libraries, services) {
         io = services.io;
 
     /**
-     * Initialize namespace to define endpoints for socket communication
+     * Initialize namespace to define endpoints for Socket.IO communication
      * @example
          namespace('example', [])
             .on('example', [], function (socket, req, res) {});

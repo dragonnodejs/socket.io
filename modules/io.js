@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Initialize socket.io service
+ * Initialize Socket.IO service to define endpoints for Socket.IO communication
  * @example
     io: { port: process.env.PORT }
  */

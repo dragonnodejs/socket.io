@@ -1,12 +1,11 @@
 "use strict";
 
-// Bundle with services to develop applications with socket.io
+// Bundle with services to develop applications with Socket.IO
 
 module.exports = function (config, _, services) {
     config = {
         npm: __dirname + '/node_modules/',
         libraries: {
-            nodejs: {},
             npm: {
                 async: 'async',
                 socketIo: 'socket.io',
@@ -15,7 +14,6 @@ module.exports = function (config, _, services) {
         },
         directory: __dirname + '/modules/',
         modules: {
-            npm: {},
             directory: config
         }
     };
