@@ -1,4 +1,5 @@
 "use strict";
+/*global module:false */
 
 /**
  * Services for validate input from the clients
@@ -17,24 +18,23 @@
  */
 
 module.exports = function (config, libraries, services) {
-    var validator = libraries.validator;
+    var _ = libraries.underscore,
+        validator = libraries.validator;
 
     var middlewares = {};
     var validates = config(validator);
-    for (var key in validates) {
-        middlewares[key] = function (validate) {
-            return function (name) {
-                return function (socket, req, res, next) {
-                    try {
-                        req[name] = validate(req[name]);
-                        next();
-                    } catch (e) {
-                        res(e.message);
-                    }
-                };
+    _.each(validates, function (validate, name) {
+        middlewares[name] = function (name) {
+            return function (socket, req, res, next) {
+                try {
+                    req[name] = validate(req[name]);
+                    next();
+                } catch (e) {
+                    res(e.message);
+                }
             };
-        }(validates[key]);
-    }
+        };
+    });
 
     services.validate = middlewares;
 };

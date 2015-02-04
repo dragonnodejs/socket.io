@@ -1,4 +1,6 @@
 "use strict";
+/*global module:false */
+/*global __dirname:false */
 
 // Bundle with services to develop applications with Socket.IO
 
@@ -9,6 +11,7 @@ module.exports = function (config, _, services) {
             npm: {
                 async: 'async',
                 socketIo: 'socket.io',
+                underscore: 'underscore',
                 validator: 'validator'
             }
         },

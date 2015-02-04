@@ -1,4 +1,5 @@
 "use strict";
+/*global module:false */
 
 /**
  * Initialize namespace service to support Socket.IO with namespacing and middlewares
@@ -8,7 +9,8 @@
 
 module.exports = function (config, libraries, services) {
     var async = libraries.async,
-        io = services.io;
+        io = services.io,
+        _ = libraries.underscore;
 
     /**
      * Initialize namespace to define endpoints for Socket.IO communication
@@ -27,11 +29,11 @@ module.exports = function (config, libraries, services) {
                     socket.on(name, function (req, res) {
                         res = res || function () {};
                         var series = [];
-                        for (var key in middlewares) {
-                            series.push(function (middleware) { return function (next) {
+                        _.each(middlewares, function (middleware) {
+                            series.push(function (next) {
                                 middleware(socket, req, res, next);
-                            } }(middlewares[key]));
-                        }
+                            });
+                        });
                         async.series(series, function () { handler(socket, req, res); });
                     });
                 });
