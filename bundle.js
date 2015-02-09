@@ -6,14 +6,11 @@
 
 module.exports = function (config, _, services) {
     config = {
-        npm: __dirname + '/node_modules/',
         libraries: {
-            npm: {
-                async: 'async',
-                socketIo: 'socket.io',
-                underscore: 'underscore',
-                validator: 'validator'
-            }
+            async: require('async'),
+            socketIo: require('socket.io'),
+            underscore: require('underscore'),
+            validator: require('validator')
         },
         directory: __dirname + '/modules/',
         modules: {
