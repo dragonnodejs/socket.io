@@ -1,5 +1,4 @@
 "use strict";
-/*global module:false */
 
 /**
  * Services for validate input from the clients
