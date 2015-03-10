@@ -27,13 +27,13 @@ module.exports = function (config, libraries, services) {
                     }
                     socket.on(name, function (req, res) {
                         res = res || function () {};
-                        var series = [];
-                        _.each(middlewares, function (middleware) {
-                            series.push(function (next) {
+                        async.eachSeries(
+                            middlewares,
+                            function (middleware, next) {
                                 middleware(socket, req, res, next);
-                            });
-                        });
-                        async.series(series, function () { handler(socket, req, res); });
+                            },
+                            function () { handler(socket, req, res); }
+                        );
                     });
                 });
                 return obj;
