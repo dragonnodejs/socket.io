@@ -4,7 +4,7 @@ Bundle with services to develop applications with Socket.IO
 - Initialize namespace service to support Socket.IO with namespacing and middlewares
 - Services for validate input from the clients 
 
-# Installation
+## Installation
 - Add bundle to the "package.json":
 ```javascript
 {
