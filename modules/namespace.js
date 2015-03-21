@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Initialize namespace service to support Socket.IO with namespacing and middlewares

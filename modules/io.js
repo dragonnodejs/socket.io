@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Initialize Socket.IO service to define endpoints for Socket.IO communication
