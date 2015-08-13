@@ -2,7 +2,8 @@
     "name": "dragonnodejs-socket.io",
     "description": "Bundle with services to develop applications with Socket.IO",
     "version": "2.1.4",
-    "author": "Christoph Herrmann <developer@dragonprojects.de>",
+    "homepage": "http://github.com/dragonnodejs/socket.io",
+    "license": "MIT",
     "readmeFilename": "README.md",
     "main": "bundle.js",
     "dependencies": {
